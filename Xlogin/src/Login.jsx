@@ -13,15 +13,7 @@ const Login=()=>{
   const handleSubmit=(e)=>{ 
     
     e.preventDefault();
-    if(username==='')
-    {
-      setError("username is required");
-    }
-    else if(password==='')
-    {
-        setError('password is required');
-    }
-    else if(formData.username!=='user'&&formData.password!=='password')
+    if(formData.username!=='user'&&formData.password!=='password')
     {
         console.log(formData.username, formData.password);
         console.log("check");
@@ -39,9 +31,9 @@ const Login=()=>{
     {
         !msg&&<form onSubmit={handleSubmit}>
             <label htmlFor="Username">Username:</label>
-            <input id="username" type="text" name='username' onChange={handleChange}/><br></br>
+            <input id="username" type="text" name='username' onChange={handleChange} required /><br></br>
             <label htmlFor='password'>Password:</label>
-            <input id="Password" type='text' name='password' onChange={handleChange}></input><br></br>
+            <input id="Password" type='text' name='password' onChange={handleChange} required></input><br></br>
             <button type='submit'>submit</button>
         </form> 
     }   
