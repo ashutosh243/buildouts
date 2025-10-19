@@ -33,7 +33,7 @@ const App=()=> {
   }
   return (<>    
     <h1>Stopwatch</h1>
-    <div>Time:{Math.floor(Timer/60)} {Math.floor(Timer%60)<10?'0'+Math.floor(Timer%60):Math.floor(Timer%60)}</div>
+    <div>Time:{Math.floor(Timer/60)}:{Math.floor(Timer%60)<10?'0'+Math.floor(Timer%60):Math.floor(Timer%60)}</div>
     <button onClick={handletoggle}>{running==true?"Stop":"Start"}</button>
     <button onClick={handleReset}>Reset</button>
   </>);
