@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Card=({name,data,unit})=>{
+
   return(<>
     <div className='weather-card'>
         <p className='name'>{name}</p>
@@ -10,6 +11,7 @@ const Card=({name,data,unit})=>{
         </div>
     </div>
   </>);
+  
 }
 
 export default Card;
