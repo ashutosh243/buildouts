@@ -21,7 +21,8 @@ const App=()=>{
   }
   useEffect(()=>{
      async function makeCall(){
-
+  
+      try{
         const response=await axios.get(`https://api.weatherapi.com/v1/current.json?key=c835c3e1a6624ff3be152534230108&q=${searchData}`);
         console.log(response.data); 
         const obj={
@@ -32,6 +33,11 @@ const App=()=>{
         }
         console.log(obj);
         setResponse(obj);
+      }
+      catch(e)
+      {
+        alert("Failed to fetch weather data");
+      }
 
      }
      makeCall();
@@ -44,15 +50,14 @@ const App=()=>{
        <input onChange={handleChange} type="text" placeholder='Enter city name' value={data}/>
        <button onClick={handleClick}>Search</button>
        <div className="weather-cards">
-          {Object.keys(apiResponse).length===0?<p>Loading data...</p>:(
+          {apiResponse['Temperature']===''?<p>Loading data...</p>:(
                 
                 Object.keys(apiResponse).map((key,index)=>{
 
                    return <Card key={index} name={key} data={apiResponse[key]} unit={unit[key]}></Card>
 
                 })
-          )}
-          
+          )}   
        </div>
      </div>
   </>)
