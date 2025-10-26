@@ -22,11 +22,11 @@ const App = () => {
       try{
         const response = await axios.get('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json');
         setData(() => response.data);
-      }
+      } 
       catch(e)
       {
         console.log(e);
-
+        alert(e.message);
       }
     } 
     getData();
@@ -37,7 +37,6 @@ const App = () => {
   }, [page,data]);
 
   return (<>
-
     <table className='tbl'>
       <thead>
         <tr>
@@ -61,9 +60,9 @@ const App = () => {
       </tbody>
     </table>
     <div className='btns'>
-      <button onClick={prevHandler}>previous</button>
+      <button onClick={prevHandler}>Previous</button>
       <div>{page}</div>
-      <button onClick={nextHandler}>next</button>
+      <button onClick={nextHandler}>Next</button>
     </div>
   </>);
 }
