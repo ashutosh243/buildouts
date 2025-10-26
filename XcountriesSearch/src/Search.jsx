@@ -40,8 +40,9 @@ const Search=()=> {
   }
   return (<>    
      <div className='search'>
-      <input value={searchText} onChange={handleChange} type="text" placeholder='search country'/>
+      <span><input value={searchText} onChange={handleChange} type="text" placeholder='search country'/></span>
      </div>
+     <p>countries</p>
      <div className='container'>
       {
         filterData?.map((d,index)=>{return <Card key={index} link={d.png} name={d.common}></Card>})

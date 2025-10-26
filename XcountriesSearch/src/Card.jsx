@@ -4,7 +4,7 @@ const Card=({link,name})=>{
   return (
     <div className='countryCard'>
        <img src={link} alt="" />
-       <h1>{name}</h1>
+       <h2>{name}</h2>
     </div>
   )
 }
