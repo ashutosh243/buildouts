@@ -26,7 +26,7 @@ const App = () => {
       catch(e)
       {
         console.log(e);
-        alert(e.message);
+        alert("failed to fetch data");
       }
     } 
     getData();
