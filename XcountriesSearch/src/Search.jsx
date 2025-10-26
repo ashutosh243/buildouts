@@ -11,9 +11,16 @@ const Search=()=> {
 
   useEffect(()=>{
     async function fetchCountry(){
+
+      try{
        const response=await axios.get('https://countries-search-data-prod-812920491762.asia-south1.run.app/countries');
        setData(()=>{return response.data});
        setFilterData(()=>{return response.data});
+      }catch(e)
+      {
+        console.log(e);
+        alert("failed to fetch data");
+      }
     }
     fetchCountry();
   },[]);
